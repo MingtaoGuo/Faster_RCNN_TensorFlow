@@ -30,7 +30,7 @@ def inference():
     saver = tf.train.Saver(rpn_var)
     saver.restore(sess, "./rpn_proposal/model/model.ckpt")
 
-    IMGS = np.array(Image.open("C:/Users/gmt/Desktop/cats/15.jpg").resize([IMG_W, IMG_H]))
+    IMGS = np.array(Image.open("./road.jpg").resize([IMG_W, IMG_H]))
     [BBOX, SCORE, CLS] = sess.run([boxes, score, classes], feed_dict={imgs: IMGS[np.newaxis]})
     X0, Y0, X1, Y1 = BBOX[:, 0:1], BBOX[:, 1:2], BBOX[:, 2:3], BBOX[:, 3:4]
     X, Y, W, H = (X0 + X1) / 2, (Y0 + Y1) / 2, X1 - X0, Y1 - Y0
