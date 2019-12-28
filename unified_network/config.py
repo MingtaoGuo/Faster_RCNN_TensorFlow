@@ -20,5 +20,5 @@ MOMENTUM = 0.9
 
 EPSILON = 1e-10
 
-XML_PATH = "../VOCdevkit/VOC2007/Annotations/"
-IMG_PATH = "../VOCdevkit/VOC2007/JPEGImages/"
+XML_PATH = "./VOCdevkit/VOC2007/Annotations/"
+IMG_PATH = "./VOCdevkit/VOC2007/JPEGImages/"
